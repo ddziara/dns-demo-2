@@ -1,0 +1,29 @@
+statler@statler-VirtualBox:~/Projects/dns-demo-2$ nslookup youtube.com 10.0.2.15
+Server:         10.0.2.15
+Address:        10.0.2.15#53
+
+Non-authoritative answer:
+Name:   youtube.com
+Address: 142.250.186.206
+Name:   youtube.com
+Address: 2a00:1450:401b:806::200e
+
+============================================
+connect to the container:
+
+  docker exec -it dns-demo-2 bash
+  
+run command:
+
+  named-checkconf -z
+
+============================================
+
+statler@statler-VirtualBox:~/Projects/dns-demo-2$ nslookup srv-prod-1.demo.clcreative.de 10.0.2.15
+Server:         10.0.2.15
+Address:        10.0.2.15#53
+
+Name:   srv-prod-1.demo.clcreative.de
+Address: 10.20.0.2
+
+
